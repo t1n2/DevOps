@@ -22,6 +22,8 @@ jobs:
         echo "1"
         echo "2"
         echo "App name: ${{ env.APPLICATION_NAME}}"
+    - name: List folder
+      run : ls -la 
 
   my_deploy:
      needs: [my_testing]
