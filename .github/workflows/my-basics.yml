@@ -1,6 +1,9 @@
 #--------------------------------------------
 
 name: My-GitHubActions-Actions
+env:
+  APPLICATION_NAME: "MyFlask"
+  DEPLOY_PACKAGE_NAME    : "flask-deploy-ver-${{ github.sha}}"
 
 on:
   push:
@@ -14,6 +17,11 @@ jobs:
     steps:
     - name: Print Hello Message in Testing
       run: echo "Hello, World, form Testing job!!!"
+    - name: Execute few commands
+      run: |
+        echo "1"
+        echo "2"
+        echo "App name: ${{ env.APPLICATION_NAME}}"
 
   my_deploy:
      needs: [my_testing]
@@ -22,4 +30,7 @@ jobs:
      steps:
      - name: Print Hello Message in Deploy
        run: echo "Hello, World, form Deploy job!!!"
+       
+     - name: Print Deployment package
+       run : echo "Deploy package naem is ${{ env.APPLICATION_NAME}}"
     
