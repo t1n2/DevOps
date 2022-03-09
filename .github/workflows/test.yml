@@ -12,3 +12,4 @@ jobs:
         run: |
                echo "$(echo $GITHUB_REF | cut -d'/' -f 3)"
                echo "$(git diff testing master)"
+               echo "!"
