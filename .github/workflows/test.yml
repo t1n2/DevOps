@@ -9,5 +9,4 @@ jobs:
     steps:
 
       - name: Echo var
-        run: |
-          echo "${{ GITHUB_REF}}"
+        run: echo "${{ GITHUB_REF}}"
