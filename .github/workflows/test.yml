@@ -9,4 +9,4 @@ jobs:
     steps:
 
       - name: Echo var
-        run: echo "${{ github.ref | cut -d'/' -f 3 }}"
+        run: echo "BRANCH=$(echo $GITHUB_REF | cut -d'/' -f 3)"
