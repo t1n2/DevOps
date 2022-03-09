@@ -7,9 +7,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      
+      - name: Git clone
+        uses: actions/checkout@v1
 
       - name: Echo var
         run: |
                echo "$(echo $GITHUB_REF | cut -d'/' -f 3)"
-               echo "$(git log)"
+               echo "$(ls -la)"
                echo "!"
