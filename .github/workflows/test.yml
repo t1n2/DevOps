@@ -9,10 +9,10 @@ jobs:
     steps:
       
       - name: Git clone
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3
         with:
-          base-branch: 'master'
-          secondary-branch: 'testing'
+          ref: 'master'
+          ref: 'testing'
 
       - name: Echo var
         run: |
