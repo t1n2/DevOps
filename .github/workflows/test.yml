@@ -10,10 +10,11 @@ jobs:
       
       - name: Git clone
         uses: actions/checkout@v3
+        with: 
+          fetch-depth: 0
         
       - name: Echo var
         run: |
                echo "$(echo $GITHUB_REF | cut -d'/' -f 3)"
-               echo "$(git switch origin/testing)"
-               echo "$(git diff origin/master origin/testing)"
+               echo "$(git diff origin/testing origin/master)"
 
