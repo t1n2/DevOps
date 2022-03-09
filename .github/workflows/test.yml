@@ -14,5 +14,5 @@ jobs:
       - name: Echo var
         run: |
                echo "$(echo $GITHUB_REF | cut -d'/' -f 3)"
-               echo "$(ls -la)"
+               echo "$(git diff testing master)"
                echo "!"
