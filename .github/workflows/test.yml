@@ -16,4 +16,5 @@ jobs:
                echo "$(echo $GITHUB_REF | cut -d'/' -f 3)"
                echo "$(git branch)"
                echo "$(git switch testing)"
-               echo "!"
+               echo "$(git diff testing master)"
+
