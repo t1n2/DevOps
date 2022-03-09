@@ -10,12 +10,10 @@ jobs:
       
       - name: Git clone
         uses: actions/checkout@v3
-        with:
-          ref: 'testing'
-
+        
       - name: Echo var
         run: |
                echo "$(echo $GITHUB_REF | cut -d'/' -f 3)"
-               echo "$(git branch)"
-               echo "$(git diff testing master)"
+               echo "$(git switch testing)"
+               echo "$(git diff origin/master origin/testing)"
 
