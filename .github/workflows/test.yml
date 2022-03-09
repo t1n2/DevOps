@@ -14,6 +14,6 @@ jobs:
       - name: Echo var
         run: |
                echo "$(echo $GITHUB_REF | cut -d'/' -f 3)"
-               echo "$(git switch testing)"
+               echo "$(git switch origin/testing)"
                echo "$(git diff origin/master origin/testing)"
 
